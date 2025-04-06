@@ -461,20 +461,43 @@
 
         /* Buttons */
         .cta-button {
-            display: inline-block;
-            padding: 1rem 2rem;
-            background-color: white;
-            color: var(--primary-color);
-            border-radius: 4px;
-            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--spacing-md) var(--spacing-2xl);
+            font-family: 'Poppins', sans-serif;
             font-weight: 600;
+            font-size: 1.125rem;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--neutral-100);
+            background: linear-gradient(to right, 
+                #2E3B5B 0%,
+                #566991 100%);
+            border-radius: var(--radius-md);
             transition: all 0.3s ease;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            width: 100%;
+            max-width: 380px;
         }
 
         .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+        }
+        
+        .cta-button span {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .quote-section .cta-button {
+            margin: 0 auto;
+            display: inline-flex;
         }
 
         /* Quote Section */
@@ -540,23 +563,6 @@
             font-size: 1.2rem;
             margin-bottom: 2rem;
             opacity: 0.9;
-        }
-        
-        .cta-button {
-            display: inline-block;
-            padding: 1rem 2rem;
-            background-color: white;
-            color: var(--primary-color);
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        }
-        
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
         }
 
         /* Reviews Section */
