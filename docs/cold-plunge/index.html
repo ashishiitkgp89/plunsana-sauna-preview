@@ -53,12 +53,11 @@
             --overlay-dark: rgba(46, 31, 71, 0.7);
             --overlay-light: rgba(255, 255, 255, 0.05);
 
-            /* Cold Plunge Specific Colors */
-            --coldplunge-primary: #1e6b96;
-            --coldplunge-secondary: #30a5c7;
-            --coldplunge-gradient-start: #1e6b96;
-            --coldplunge-gradient-end: #30a5c7;
-            --coldplunge-gradient: linear-gradient(135deg, var(--coldplunge-gradient-start) 0%, var(--coldplunge-gradient-end) 100%);
+            /* Red Light Specific Colors */
+            --redlight-primary: #8B2531;
+            --redlight-secondary: #E34234;
+            --redlight-gradient-start: #8B2531;
+            --redlight-gradient-end: #D64A3B;
             
             --primary-purple: #8A2BE2;
             --primary-purple-dark: #7020b9;
@@ -121,8 +120,8 @@
             right: 0;
             bottom: 0;
             background: linear-gradient(135deg, 
-                rgba(30, 107, 150, 0.75) 0%,
-                rgba(48, 165, 199, 0.65) 100%);
+                rgba(80, 40, 77, 0.65) 0%,
+                rgba(46, 31, 71, 0.55) 100%);
             z-index: 1;
         }
 
@@ -329,8 +328,8 @@
             width: 60px;
             height: 60px;
             background: linear-gradient(135deg, 
-                var(--coldplunge-primary) 0%,
-                var(--coldplunge-secondary) 100%);
+                var(--primary-color) 0%,
+                var(--secondary-gradient-start) 100%);
             color: var(--neutral-100);
             border-radius: 50%;
             display: flex;
@@ -339,7 +338,7 @@
             font-size: 1.5rem;
             font-weight: 700;
             margin: 0 auto var(--spacing-lg);
-            box-shadow: 0 4px 10px rgba(30, 107, 150, 0.3);
+            box-shadow: 0 4px 10px rgba(46, 31, 71, 0.3);
         }
 
         .journey-card h3 {
@@ -446,7 +445,7 @@
         }
 
         .benefit-item h3 {
-            color: #a0d0e8;
+            color: var(--accent-color);
             font-size: 1.25rem;
             margin-bottom: var(--spacing-md);
             text-shadow: 0 1px 3px rgba(0,0,0,0.3);
@@ -482,8 +481,8 @@
         .quote-section {
             padding: var(--spacing-3xl) 0;
             background: linear-gradient(90deg, 
-                rgba(30, 107, 150, 0.9) 0%,
-                rgba(48, 165, 199, 0.85) 100%);
+                rgba(46, 31, 71, 0.9) 0%,
+                rgba(139, 49, 76, 0.85) 100%);
             color: white;
             text-align: center;
         }
@@ -931,8 +930,8 @@
             left: 0;
             right: 0;
             background: linear-gradient(90deg, 
-                var(--coldplunge-primary) 0%,
-                var(--coldplunge-secondary) 100%);
+                var(--primary-color) 0%,
+                var(--secondary-gradient-start) 100%);
             z-index: 1000;
             padding: 12px 0;
         }
@@ -1003,7 +1002,7 @@
         
         /* Booking Banner */
         .booking-banner {
-            background: var(--coldplunge-secondary);
+            background: var(--secondary-gradient-start);
             color: white;
             text-align: center;
             padding: 8px;
