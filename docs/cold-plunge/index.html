@@ -53,12 +53,13 @@
             --overlay-dark: rgba(46, 31, 71, 0.7);
             --overlay-light: rgba(255, 255, 255, 0.05);
 
-            /* Red Light Specific Colors */
-            --redlight-primary: #8B2531;
-            --redlight-secondary: #E34234;
-            --redlight-gradient-start: #8B2531;
-            --redlight-gradient-end: #D64A3B;
-
+            /* Cold Plunge Specific Colors */
+            --coldplunge-primary: #1e6b96;
+            --coldplunge-secondary: #30a5c7;
+            --coldplunge-gradient-start: #1e6b96;
+            --coldplunge-gradient-end: #30a5c7;
+            --coldplunge-gradient: linear-gradient(135deg, var(--coldplunge-gradient-start) 0%, var(--coldplunge-gradient-end) 100%);
+            
             --primary-purple: #8A2BE2;
             --primary-purple-dark: #7020b9;
             --secondary-blue: #4169E1;
@@ -107,7 +108,7 @@
             align-items: center;
             color: var(--neutral-beige);
             overflow: hidden;
-            margin-top: 125px;
+            margin-top: 90px;
             background-image: url('https://res.cloudinary.com/dcfv2aml6/image/upload/v1743945469/spa-concept-with-woman-relaxing-water-1-980x654_fiur5a.jpg');
             background-size: cover;
             background-position: center;
@@ -120,8 +121,8 @@
             right: 0;
             bottom: 0;
             background: linear-gradient(135deg, 
-                rgba(80, 40, 77, 0.65) 0%,
-                rgba(46, 31, 71, 0.55) 100%);
+                rgba(30, 107, 150, 0.75) 0%,
+                rgba(48, 165, 199, 0.65) 100%);
             z-index: 1;
         }
 
@@ -328,8 +329,8 @@
             width: 60px;
             height: 60px;
             background: linear-gradient(135deg, 
-                var(--primary-color) 0%,
-                var(--secondary-gradient-start) 100%);
+                var(--coldplunge-primary) 0%,
+                var(--coldplunge-secondary) 100%);
             color: var(--neutral-100);
             border-radius: 50%;
             display: flex;
@@ -338,7 +339,7 @@
             font-size: 1.5rem;
             font-weight: 700;
             margin: 0 auto var(--spacing-lg);
-            box-shadow: 0 4px 10px rgba(46, 31, 71, 0.3);
+            box-shadow: 0 4px 10px rgba(30, 107, 150, 0.3);
         }
 
         .journey-card h3 {
@@ -445,7 +446,7 @@
         }
 
         .benefit-item h3 {
-            color: var(--accent-color);
+            color: #a0d0e8;
             font-size: 1.25rem;
             margin-bottom: var(--spacing-md);
             text-shadow: 0 1px 3px rgba(0,0,0,0.3);
@@ -481,8 +482,8 @@
         .quote-section {
             padding: var(--spacing-3xl) 0;
             background: linear-gradient(90deg, 
-                rgba(46, 31, 71, 0.9) 0%,
-                rgba(139, 49, 76, 0.85) 100%);
+                rgba(30, 107, 150, 0.9) 0%,
+                rgba(48, 165, 199, 0.85) 100%);
             color: white;
             text-align: center;
         }
@@ -750,61 +751,7 @@
 
         /* Main Navigation */
         .main-nav {
-            background: rgba(46, 31, 71, 0.9);
-            position: fixed;
-            top: 90px;
-            left: 0;
-            right: 0;
-            z-index: 999;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-        
-        .services-nav {
-            display: flex;
-            justify-content: center;
-            padding: 10px 0;
-            gap: 30px;
-        }
-        
-        .services-nav .nav-link {
-            font-size: 14px;
-            padding: 5px 10px;
-            color: white;
-            text-decoration: none;
-            opacity: 0.8;
-            transition: opacity 0.3s ease;
-        }
-        
-        .services-nav .nav-link:hover {
-            opacity: 1;
-        }
-        
-        .services-nav .nav-link.active {
-            color: var(--accent-color);
-            opacity: 1;
-            font-weight: 600;
-            position: relative;
-        }
-        
-        .services-nav .nav-link.active::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background-color: var(--accent-color);
-        }
-        
-        /* Mobile Adjustments */
-        @media (max-width: 768px) {
-            .main-nav {
-                display: none;
-            }
-            
-            .hero-section {
-                margin-top: 90px;
-            }
+            display: none;
         }
 
         /* Animations */
@@ -984,8 +931,8 @@
             left: 0;
             right: 0;
             background: linear-gradient(90deg, 
-                var(--primary-color) 0%,
-                var(--secondary-gradient-start) 100%);
+                var(--coldplunge-primary) 0%,
+                var(--coldplunge-secondary) 100%);
             z-index: 1000;
             padding: 12px 0;
         }
@@ -1056,7 +1003,7 @@
         
         /* Booking Banner */
         .booking-banner {
-            background: var(--secondary-gradient-start);
+            background: var(--coldplunge-secondary);
             color: white;
             text-align: center;
             padding: 8px;
@@ -1129,17 +1076,6 @@
         </div>
     </header>
 
-    <div class="main-nav">
-        <div class="container">
-            <nav class="services-nav">
-                <a href="../" class="nav-link">Sauna</a>
-                <a href="." class="nav-link active">Cold Plunge</a>
-                <a href="../red-light/" class="nav-link">Red Light Therapy</a>
-                <a href="#" class="nav-link">Breathwork</a>
-            </nav>
-        </div>
-    </div>
-
     <!-- Add necessary JavaScript for mobile menu -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -1183,7 +1119,7 @@
     </script>
 
     <!-- Hero Section -->
-    <section class="hero-section" style="background-image: url('https://images.unsplash.com/photo-1562196243-e43e43a9211c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80');">
+    <section class="hero-section">
         <div class="hero-overlay">
             <div class="container">
                 <div class="hero-content fade-in">
