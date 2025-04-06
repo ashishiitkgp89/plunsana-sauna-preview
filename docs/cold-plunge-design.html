@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cold Plunge & Ice Bath - Plunsana</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2E1F47;
+            --secondary-gradient-start: #8B314C;
+            --secondary-gradient-end: #50284D;
+            --accent-color: #C2D3FF;
+            --neutral-beige: #F5EDE1;
+            --neutral-dark: #333333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            font-size: 18px;
+            line-height: 1.6;
+            color: var(--neutral-dark);
+        }
+
+        .container {
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(to right, var(--secondary-gradient-start), var(--secondary-gradient-end));
+            padding: 120px 0;
+            color: var(--neutral-beige);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://plunsana.com/wp-content/uploads/2023/12/cold-plunge-benefits.webp') center/cover;
+            opacity: 0.2;
+            z-index: 1;
+        }
+
+        .hero-grid {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 48px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+        }
+
+        .hero-content p {
+            font-size: 20px;
+            margin-bottom: 32px;
+        }
+
+        .hero-image {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+        }
+
+        /* Benefits Section */
+        .benefits-section {
+            padding: 96px 0;
+            background: var(--primary-color);
+            color: var(--neutral-beige);
+        }
+
+        .section-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 36px;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 64px;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+
+        .benefit-card {
+            background: rgba(255,255,255,0.1);
+            padding: 32px;
+            border-radius: 16px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .benefit-card h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 24px;
+            margin-bottom: 16px;
+            color: var(--accent-color);
+        }
+
+        /* Process Section */
+        .process-section {
+            padding: 96px 0;
+            background: var(--neutral-beige);
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+        }
+
+        .process-card {
+            background: white;
+            padding: 32px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .process-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .process-card h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 24px;
+            color: var(--primary-color);
+            margin-bottom: 16px;
+        }
+
+        /* Science Section */
+        .science-section {
+            padding: 96px 0;
+            background: white;
+        }
+
+        .science-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 96px 0;
+            background: linear-gradient(to right, var(--secondary-gradient-start), var(--secondary-gradient-end));
+            color: var(--neutral-beige);
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Button Styles */
+        .cta-button {
+            display: inline-block;
+            background: var(--neutral-beige);
+            color: var(--primary-color);
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 18px;
+            text-decoration: none;
+            padding: 16px 32px;
+            border-radius: 8px;
+            text-transform: uppercase;
+            transition: transform 0.3s ease;
+            margin-top: 32px;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            background: white;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-grid, .benefits-grid, .process-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-section {
+                padding: 64px 0;
+            }
+
+            .hero-content h1 {
+                font-size: 36px;
+            }
+
+            .container {
+                padding: 0 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <h1>Experience the Power of Cold Plunge</h1>
+                    <p>Discover the transformative benefits of cold therapy for your body and mind. Our state-of-the-art cold plunge facilities offer a controlled environment for optimal recovery and rejuvenation.</p>
+                    <a href="#book" class="cta-button">Schedule Your Plunge</a>
+                </div>
+                <div class="hero-image">
+                    <img src="https://plunsana.com/wp-content/uploads/2023/12/cold-plunge-benefits.webp" alt="Plunsana Cold Plunge">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section">
+        <div class="container">
+            <h2 class="section-title">Cold Plunge Benefits</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <h3>Recovery & Performance</h3>
+                    <p>Accelerate muscle recovery, reduce inflammation, and enhance athletic performance</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Mental Resilience</h3>
+                    <p>Build mental toughness and improve stress response through controlled exposure</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Immune Support</h3>
+                    <p>Strengthen your immune system and boost overall vitality</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process-section">
+        <div class="container">
+            <h2 class="section-title">Your Cold Plunge Journey</h2>
+            <div class="process-grid">
+                <div class="process-card">
+                    <h3>1. Preparation</h3>
+                    <p>Learn proper breathing techniques and mental preparation strategies for cold exposure</p>
+                </div>
+                <div class="process-card">
+                    <h3>2. Guided Entry</h3>
+                    <p>Experience controlled immersion with expert guidance and support</p>
+                </div>
+                <div class="process-card">
+                    <h3>3. Mindful Practice</h3>
+                    <p>Develop awareness and control over your body's response to cold</p>
+                </div>
+                <div class="process-card">
+                    <h3>4. Progressive Adaptation</h3>
+                    <p>Gradually increase exposure time as your cold tolerance improves</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Science Section -->
+    <section class="science-section">
+        <div class="container">
+            <div class="science-content">
+                <h2 class="section-title">The Science Behind Cold Therapy</h2>
+                <p>Cold plunge therapy triggers a cascade of physiological responses that can lead to improved circulation, reduced inflammation, and enhanced recovery. Through controlled cold exposure, your body adapts and becomes more resilient, leading to both physical and mental benefits.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="section-title">Ready to Transform Your Health?</h2>
+                <p>Join us at Plunsana and discover the incredible benefits of cold plunge therapy. Our expert guides will help you every step of the way.</p>
+                <a href="#book" class="cta-button">Book Your Session Now</a>
+            </div>
+        </div>
+    </section>
+</body>
+</html> 

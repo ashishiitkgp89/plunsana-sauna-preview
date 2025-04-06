@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breathwork - Plunsana</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Primary Colors */
+            --primary-color: #2E1F47;
+            --secondary-gradient-start: #8B314C;
+            --secondary-gradient-end: #50284D;
+            --accent-color: #C2D3FF;
+            --neutral-beige: #F5EDE1;
+            --neutral-dark: #333333;
+
+            /* Secondary Colors */
+            --neutral-100: #FFFFFF;
+            --neutral-200: #F8F9FA;
+            --neutral-300: #E9ECEF;
+            --neutral-400: #DEE2E6;
+            
+            /* Shadows */
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.08);
+            --shadow-md: 0 4px 8px rgba(0,0,0,0.12);
+            --shadow-lg: 0 8px 16px rgba(0,0,0,0.16);
+            --shadow-xl: 0 12px 24px rgba(0,0,0,0.2);
+            --shadow-inner: inset 0 2px 4px rgba(0,0,0,0.06);
+            
+            /* Spacing */
+            --spacing-xs: 0.25rem;
+            --spacing-sm: 0.5rem;
+            --spacing-md: 1rem;
+            --spacing-lg: 1.5rem;
+            --spacing-xl: 2rem;
+            --spacing-2xl: 3rem;
+            --spacing-3xl: 4rem;
+            --spacing-4xl: 6rem;
+            --spacing-5xl: 8rem;
+            
+            /* Border Radius */
+            --radius-sm: 0.375rem;
+            --radius-md: 0.5rem;
+            --radius-lg: 1rem;
+            --radius-xl: 1.5rem;
+
+            /* New colors */
+            --accent-glow: rgba(194, 211, 255, 0.15);
+            --overlay-dark: rgba(46, 31, 71, 0.7);
+            --overlay-light: rgba(255, 255, 255, 0.05);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            font-size: 1.125rem;
+            line-height: 1.75;
+            color: var(--neutral-dark);
+            background-color: var(--neutral-100);
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-4xl);
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            padding: var(--spacing-5xl) 0;
+            background: linear-gradient(135deg, 
+                var(--secondary-gradient-start) 0%,
+                var(--primary-color) 100%);
+            color: var(--neutral-beige);
+            overflow: hidden;
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 70% 30%,
+                rgba(139, 49, 76, 0.4) 0%,
+                rgba(46, 31, 71, 0.8) 70%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            margin-bottom: var(--spacing-xl);
+            color: var(--neutral-beige);
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            margin-bottom: var(--spacing-2xl);
+            opacity: 0.9;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: var(--spacing-4xl) 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-xl);
+            text-align: center;
+        }
+
+        .section-subtitle {
+            font-size: 1.25rem;
+            color: var(--neutral-dark);
+            opacity: 0.9;
+            text-align: center;
+            margin-bottom: var(--spacing-2xl);
+        }
+
+        /* Journey Section */
+        .journey-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--spacing-xl);
+            margin-top: var(--spacing-2xl);
+        }
+
+        .journey-card {
+            background: var(--neutral-100);
+            padding: var(--spacing-xl);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            transition: transform 0.3s ease;
+        }
+
+        .journey-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .journey-card h3 {
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-md);
+            font-size: 1.5rem;
+        }
+
+        /* Benefits Section */
+        .benefits-section {
+            background: linear-gradient(135deg,
+                var(--primary-color) 0%,
+                var(--secondary-gradient-end) 100%);
+            color: var(--neutral-beige);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--spacing-xl);
+            margin-top: var(--spacing-2xl);
+        }
+
+        .benefit-item {
+            background: var(--overlay-light);
+            padding: var(--spacing-xl);
+            border-radius: var(--radius-lg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .benefit-item h3 {
+            color: var(--accent-color);
+            margin-bottom: var(--spacing-md);
+            font-size: 1.25rem;
+        }
+
+        .benefit-item p {
+            opacity: 0.9;
+            font-size: 1rem;
+        }
+
+        /* Emotional Release Section */
+        .emotional-release {
+            background: var(--neutral-200);
+        }
+
+        .emotional-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .emotional-content p {
+            margin-bottom: var(--spacing-xl);
+            font-size: 1.125rem;
+            line-height: 1.8;
+        }
+
+        /* Quote Section */
+        .quote-section {
+            background: var(--neutral-100);
+            text-align: center;
+        }
+
+        blockquote {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            max-width: 800px;
+            margin: 0 auto var(--spacing-xl);
+            font-style: italic;
+        }
+
+        blockquote footer {
+            font-size: 1rem;
+            color: var(--secondary-gradient-start);
+            margin-top: var(--spacing-md);
+        }
+
+        /* Animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.6s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .journey-grid,
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                padding: 0 var(--spacing-xl);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content fade-in">
+                <h1 class="hero-title">Get the Mental Clarity You Need with Our Breathwork Sessions</h1>
+                <p class="hero-subtitle">Enhance your mental clarity and focus through guided breathing exercises that connect mind, body, and spirit.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Journey Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">A 4-Step Journey to Inner Peace and Vitality</h2>
+            <div class="journey-grid">
+                <div class="journey-card fade-in">
+                    <h3>1. Awareness</h3>
+                    <p>Start by finding a quiet, comfortable space where you can sit or lie down without interruptions. Close your eyes and bring your attention to your natural breathing pattern. Notice the rhythm, depth, and sensations of each breath without trying to change anything.</p>
+                </div>
+                <div class="journey-card fade-in">
+                    <h3>2. Engage in Diaphragmatic Breathing</h3>
+                    <p>Place one hand on your abdomen and the other on your chest. As you inhale, focus on expanding your belly, feeling your hand rise, and minimizing the movement in your chest. This technique enhances oxygen exchange and activates the body's relaxation response.</p>
+                </div>
+                <div class="journey-card fade-in">
+                    <h3>3. Controlled Breathing</h3>
+                    <p>After mastering diaphragmatic breathing, experiment with varying the length of your inhales and exhales. A common method is the 4-7-8 technique: inhale for 4 seconds, hold for 7 seconds, and exhale for 8 seconds.</p>
+                </div>
+                <div class="journey-card fade-in">
+                    <h3>4. Practice Visualization</h3>
+                    <p>As you continue with controlled breathing, visualize a wave of relaxation sweeping through your body with each exhale, or imagine exhaling stress and inhaling calm. This step combines the power of the mind with the physiological benefits of Breathwork.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section section">
+        <div class="container">
+            <h2 class="section-title" style="color: var(--neutral-beige);">Transformative Benefits of Breathwork</h2>
+            <p class="section-subtitle" style="color: var(--neutral-beige); opacity: 0.9;">Unlock Your Full Potential Through the Power of Breath</p>
+            <div class="benefits-grid">
+                <div class="benefit-item fade-in">
+                    <h3>Mental Clarity</h3>
+                    <p>Enhances mental clarity and focus through controlled breathing.</p>
+                </div>
+                <div class="benefit-item fade-in">
+                    <h3>Stress Reduction</h3>
+                    <p>Promotes deep relaxation and reduces symptoms of stress.</p>
+                </div>
+                <div class="benefit-item fade-in">
+                    <h3>Emotional Release</h3>
+                    <p>Encourages emotional release and helps process pent-up feelings.</p>
+                </div>
+                <div class="benefit-item fade-in">
+                    <h3>Energy Boost</h3>
+                    <p>Increases energy levels and revitalizes the body.</p>
+                </div>
+                <div class="benefit-item fade-in">
+                    <h3>Detoxification</h3>
+                    <p>Supports detoxification processes through increased oxygenation.</p>
+                </div>
+                <div class="benefit-item fade-in">
+                    <h3>Anxiety Management</h3>
+                    <p>Helps in managing anxiety and depression by regulating the nervous system.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emotional Release Section -->
+    <section class="emotional-release section">
+        <div class="container">
+            <h2 class="section-title">Emotional Release with Our Therapies</h2>
+            <div class="emotional-content fade-in">
+                <p>Emotional release through Breathwork is a transformative process that taps into the depths of our being, allowing us to confront and release emotions that have been stored in our bodies, sometimes for years. This journey towards emotional freedom is not just about letting go of the negative but embracing a fuller spectrum of our emotional landscape.</p>
+                <p>Breathwork serves as a bridge between the conscious and subconscious mind, providing a pathway for emotions that have been suppressed or unacknowledged to surface in a controlled and safe environment. As you engage in deep, rhythmic breathing, your body begins to relax, and your mind becomes more receptive to the healing process.</p>
+                <p>The beauty of Breathwork for emotional release lies in its simplicity and the immediate sense of relief it can bring. Participants often report experiencing a significant emotional catharsis during or after a session, which can manifest as tears, laughter, or a profound sense of calm.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Section -->
+    <section class="quote-section section">
+        <div class="container">
+            <blockquote class="fade-in">
+                "Cold is a stressor, so if you can get into the cold and control your body's response to it, you will be able to control stress."
+                <footer>– WIM HOF</footer>
+            </blockquote>
+        </div>
+    </section>
+</body>
+</html> 

@@ -1,0 +1,155 @@
+/* Header Styles */
+.header {
+    position: fixed;
+    top: 36px;
+    left: 0;
+    right: 0;
+    background: linear-gradient(90deg, 
+        var(--primary-color) 0%,
+        var(--secondary-gradient-start) 100%);
+    z-index: 1000;
+    padding: 12px 0;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-xl);
+    position: relative;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px;
+    width: auto;
+}
+
+/* Main Navigation */
+.main-nav {
+    background: rgba(46, 31, 71, 0.9);
+    position: fixed;
+    top: 88px; /* Adjusted to account for header height */
+    left: 0;
+    right: 0;
+    z-index: 999;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.services-nav {
+    display: flex;
+    justify-content: center;
+    padding: 15px 0;
+    gap: 40px;
+}
+
+.services-nav .nav-link {
+    font-size: 16px;
+    padding: 8px 16px;
+    color: white;
+    text-decoration: none;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.services-nav .nav-link:hover {
+    opacity: 1;
+}
+
+.services-nav .nav-link.active {
+    color: var(--accent-color);
+    opacity: 1;
+    font-weight: 600;
+}
+
+.services-nav .nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--accent-color);
+    transform: scaleX(1);
+    transition: transform 0.3s ease;
+}
+
+.services-nav .nav-link:not(.active)::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--accent-color);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.services-nav .nav-link:hover::after {
+    transform: scaleX(1);
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .header {
+        top: 36px;
+        padding: 8px 0;
+    }
+    
+    .logo img {
+        height: 32px;
+    }
+    
+    .main-nav {
+        top: 82px;
+    }
+    
+    .services-nav {
+        padding: 10px 0;
+        gap: 20px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        padding-left: 20px;
+        padding-right: 20px;
+        justify-content: flex-start;
+    }
+    
+    .services-nav .nav-link {
+        font-size: 14px;
+        padding: 6px 12px;
+        white-space: nowrap;
+    }
+    
+    .hero-section {
+        margin-top: 130px;
+    }
+}
+
+@media (max-width: 576px) {
+    .header {
+        top: 36px;
+    }
+    
+    .main-nav {
+        top: 82px;
+    }
+    
+    .services-nav {
+        gap: 15px;
+    }
+    
+    .services-nav .nav-link {
+        font-size: 13px;
+        padding: 5px 10px;
+    }
+} 

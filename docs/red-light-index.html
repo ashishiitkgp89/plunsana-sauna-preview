@@ -1,0 +1,1419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Red Light Therapy - Plunsana</title>
+    <meta name="description" content="Experience the transformative benefits of Red Light Therapy at Plunsana. Enhance skin health, aid muscle recovery, and improve overall wellbeing.">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Primary Colors */
+            --primary-color: #2E1F47;
+            --secondary-gradient-start: #8B314C;
+            --secondary-gradient-end: #50284D;
+            --accent-color: #C2D3FF;
+            --neutral-beige: #F5EDE1;
+            --neutral-dark: #333333;
+
+            /* Secondary Colors */
+            --neutral-100: #FFFFFF;
+            --neutral-200: #F8F9FA;
+            --neutral-300: #E9ECEF;
+            --neutral-400: #DEE2E6;
+            
+            /* Shadows */
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.08);
+            --shadow-md: 0 4px 8px rgba(0,0,0,0.12);
+            --shadow-lg: 0 8px 16px rgba(0,0,0,0.16);
+            --shadow-xl: 0 12px 24px rgba(0,0,0,0.2);
+            --shadow-inner: inset 0 2px 4px rgba(0,0,0,0.06);
+            
+            /* Spacing */
+            --spacing-xs: 0.25rem;   /* 4px */
+            --spacing-sm: 0.5rem;    /* 8px */
+            --spacing-md: 1rem;      /* 16px */
+            --spacing-lg: 1.5rem;    /* 24px */
+            --spacing-xl: 2rem;      /* 32px */
+            --spacing-2xl: 3rem;     /* 48px */
+            --spacing-3xl: 4rem;     /* 64px */
+            --spacing-4xl: 6rem;     /* 96px */
+            --spacing-5xl: 8rem;     /* 128px */
+            
+            /* Border Radius */
+            --radius-sm: 0.375rem;   /* 6px */
+            --radius-md: 0.5rem;     /* 8px */
+            --radius-lg: 1rem;       /* 16px */
+            --radius-xl: 1.5rem;     /* 24px */
+
+            /* New colors */
+            --accent-glow: rgba(194, 211, 255, 0.15);
+            --overlay-dark: rgba(46, 31, 71, 0.7);
+            --overlay-light: rgba(255, 255, 255, 0.05);
+
+            /* Red Light Specific Colors */
+            --redlight-primary: #8B2531;
+            --redlight-secondary: #E34234;
+            --redlight-gradient-start: #8B2531;
+            --redlight-gradient-end: #D64A3B;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            font-size: 1.125rem;
+            line-height: 1.75;
+            color: var(--neutral-dark);
+            background-color: var(--neutral-100);
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-4xl);
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+        }
+
+        /* Hero Section - Full Bleed */
+        .hero-section {
+            position: relative;
+            padding: 0;
+            color: var(--neutral-beige);
+            overflow: hidden;
+            margin-top: 90px;
+            background-image: url('https://res.cloudinary.com/dcfv2aml6/image/upload/v1743940972/Red-light_Hero_c8whpn.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 85vh;
+            max-height: calc(100vh - 90px);
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, 
+                rgba(80, 40, 77, 0.65) 0%,
+                rgba(46, 31, 71, 0.55) 100%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            max-width: 650px;
+            padding: var(--spacing-2xl);
+        }
+
+        .hero-content h1 {
+            font-size: 3.8rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: var(--spacing-lg);
+            text-transform: uppercase;
+            color: var(--neutral-100);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            letter-spacing: -0.02em;
+        }
+
+        .hero-content .highlight {
+            position: relative;
+            display: inline-block;
+            color: var(--neutral-100);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-content .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, 
+                rgba(194, 211, 255, 0) 0%,
+                rgba(194, 211, 255, 0.7) 50%,
+                rgba(194, 211, 255, 0) 100%);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            line-height: 1.5;
+            margin-bottom: var(--spacing-xl);
+            opacity: 0.95;
+            color: var(--neutral-100);
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+            max-width: 540px;
+        }
+
+        .hero-image {
+            position: relative;
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-xl);
+            transform: perspective(1000px) rotateY(-5deg);
+            transition: transform 0.6s ease;
+            aspect-ratio: 4/3;
+        }
+
+        .hero-image:hover {
+            transform: perspective(1000px) rotateY(0deg);
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: var(--spacing-5xl) 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg,
+                rgba(46, 31, 71, 0) 0%,
+                rgba(46, 31, 71, 0.1) 50%,
+                rgba(46, 31, 71, 0) 100%);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: var(--spacing-2xl);
+            color: var(--primary-color);
+        }
+
+        .section-subtitle {
+            font-size: 1.25rem;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto var(--spacing-2xl);
+            color: var(--neutral-dark);
+            opacity: 0.85;
+            line-height: 1.6;
+        }
+
+        /* Journey Section - New Design */
+        .journey-section {
+            padding: var(--spacing-5xl) 0;
+            background: linear-gradient(135deg, var(--neutral-100) 0%, var(--neutral-200) 100%);
+            position: relative;
+        }
+
+        .journey-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg,
+                rgba(46, 31, 71, 0) 0%,
+                rgba(46, 31, 71, 0.1) 50%,
+                rgba(46, 31, 71, 0) 100%);
+        }
+
+        .journey-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-2xl);
+        }
+
+        .journey-title {
+            font-size: 2.75rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: var(--spacing-3xl);
+            color: var(--primary-color);
+        }
+
+        .journey-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--spacing-xl);
+            position: relative;
+        }
+
+        .journey-grid::after {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 50px;
+            right: 50px;
+            height: 4px;
+            background: linear-gradient(90deg, 
+                var(--primary-color) 0%,
+                var(--secondary-gradient-start) 100%);
+            z-index: 0;
+            border-radius: 4px;
+        }
+
+        .journey-card {
+            background: var(--neutral-100);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-xl);
+            box-shadow: var(--shadow-md);
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(46, 31, 71, 0.1);
+        }
+
+        .journey-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .journey-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, 
+                var(--primary-color) 0%,
+                var(--secondary-gradient-start) 100%);
+            color: var(--neutral-100);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto var(--spacing-lg);
+            box-shadow: 0 4px 10px rgba(46, 31, 71, 0.3);
+        }
+
+        .journey-card h3 {
+            font-size: 1.25rem;
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-md);
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .journey-card p {
+            color: var(--neutral-dark);
+            opacity: 0.85;
+            font-size: 1rem;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        @media (max-width: 992px) {
+            .journey-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .journey-grid::after {
+                display: none;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .journey-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .journey-title {
+                font-size: 2rem;
+            }
+        }
+
+        /* Benefits Section */
+        .benefits-section {
+            background: var(--primary-color);
+            color: var(--neutral-beige);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .benefits-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at top right,
+                rgba(194, 211, 255, 0.25) 0%,
+                rgba(194, 211, 255, 0) 70%);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--spacing-2xl);
+            position: relative;
+            z-index: 1;
+        }
+
+        .benefit-item {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            padding: var(--spacing-2xl);
+            border-radius: var(--radius-lg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .benefit-item::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at center,
+                rgba(194, 211, 255, 0.1) 0%,
+                rgba(194, 211, 255, 0) 50%);
+            transform: rotate(45deg);
+            transition: transform 0.6s ease;
+        }
+
+        .benefit-item:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .benefit-item:hover::before {
+            transform: rotate(225deg);
+        }
+
+        .benefit-item h3 {
+            color: var(--accent-color);
+            font-size: 1.25rem;
+            margin-bottom: var(--spacing-md);
+            text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+        }
+
+        .benefit-item p {
+            color: var(--neutral-beige);
+            opacity: 0.95;
+            font-size: 1rem;
+            line-height: 1.75;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+        }
+
+        /* Buttons */
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--spacing-md) var(--spacing-2xl);
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 1.125rem;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--neutral-100);
+            background: linear-gradient(to right, 
+                #2E3B5B 0%,
+                #566991 100%);
+            border-radius: var(--radius-md);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            width: 100%;
+            max-width: 380px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+        }
+
+        .cta-button span {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Quote Section */
+        .quote-section {
+            background: linear-gradient(90deg, 
+                rgba(46, 31, 71, 0.9) 0%,
+                rgba(139, 49, 76, 0.85) 100%);
+            position: relative;
+            overflow: hidden;
+            color: var(--neutral-100);
+            padding: var(--spacing-5xl) 0;
+            text-align: center;
+        }
+
+        .quote-section .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .quote-section .cta-content {
+            margin-top: var(--spacing-3xl);
+        }
+
+        .quote-section .cta-title {
+            font-size: 2.5rem;
+            color: var(--neutral-100);
+            margin-bottom: var(--spacing-md);
+            font-weight: 600;
+        }
+
+        .quote-section .cta-subtitle {
+            font-size: 1.125rem;
+            color: var(--neutral-100);
+            opacity: 0.9;
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .quote-section .cta-button {
+            margin: 0 auto;
+            display: inline-flex;
+        }
+
+        blockquote {
+            position: relative;
+            z-index: 1;
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 500;
+            font-style: italic;
+            color: var(--neutral-100);
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+            padding: var(--spacing-2xl) var(--spacing-2xl);
+            line-height: 1.4;
+        }
+
+        blockquote footer {
+            font-size: 1.25rem;
+            margin-top: var(--spacing-xl);
+            opacity: 0.8;
+            font-style: normal;
+            font-weight: 600;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1400px) {
+            .container {
+                max-width: 1140px;
+            }
+            
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+            
+            .hero-content .highlight {
+                font-size: 4rem;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .container {
+                max-width: 960px;
+                padding: 0 var(--spacing-3xl);
+            }
+            
+            .hero-content h1 {
+                font-size: 2.75rem;
+            }
+            
+            .hero-content .highlight {
+                font-size: 3.5rem;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+
+            blockquote {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .container {
+                max-width: 720px;
+            }
+
+            .benefits-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-content .highlight {
+                font-size: 3.25rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 var(--spacing-2xl);
+            }
+
+            .hero-grid {
+                grid-template-columns: 1fr;
+                min-height: auto;
+                gap: var(--spacing-3xl);
+            }
+
+            .hero-content {
+                padding: var(--spacing-xl);
+                text-align: center;
+                margin: 0 auto;
+            }
+
+            .hero-image {
+                transform: perspective(1000px) rotateY(0);
+                margin: 0 -var(--spacing-xl);
+            }
+
+            .journey-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+
+            blockquote {
+                font-size: 1.75rem;
+                padding: var(--spacing-2xl) var(--spacing-xl);
+            }
+
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+            
+            .hero-content .highlight {
+                font-size: 3rem;
+            }
+
+            .hero-content p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .journey-card, .benefit-item, .review-card {
+                transform: none !important;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .container {
+                padding: 0 var(--spacing-xl);
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .section-subtitle {
+                font-size: 1.125rem;
+            }
+
+            .hero-content .highlight {
+                font-size: 2.5rem;
+            }
+
+            blockquote {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .fade-in-scale {
+            opacity: 0;
+            animation: fadeInScale 0.6s ease forwards;
+        }
+
+        /* Add animation delays for cascade effect */
+        .journey-grid > *:nth-child(1) { animation-delay: 0.1s; }
+        .journey-grid > *:nth-child(2) { animation-delay: 0.2s; }
+        .journey-grid > *:nth-child(3) { animation-delay: 0.3s; }
+        .journey-grid > *:nth-child(4) { animation-delay: 0.4s; }
+
+        .benefits-grid > *:nth-child(1) { animation-delay: 0.1s; }
+        .benefits-grid > *:nth-child(2) { animation-delay: 0.2s; }
+        .benefits-grid > *:nth-child(3) { animation-delay: 0.3s; }
+        .benefits-grid > *:nth-child(4) { animation-delay: 0.4s; }
+        .benefits-grid > *:nth-child(5) { animation-delay: 0.5s; }
+        .benefits-grid > *:nth-child(6) { animation-delay: 0.6s; }
+
+        /* Utility Classes */
+        .text-gradient {
+            background: linear-gradient(135deg, 
+                var(--secondary-gradient-start),
+                var(--secondary-gradient-end));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+        }
+
+        /* Add new ambient section */
+        .ambient-section {
+            position: relative;
+            padding: var(--spacing-4xl) 0;
+            background: var(--neutral-200);
+            overflow: hidden;
+        }
+
+        .ambient-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--spacing-3xl);
+            align-items: center;
+        }
+
+        .ambient-image {
+            position: relative;
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-xl);
+            aspect-ratio: 4/3;
+        }
+
+        .ambient-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .ambient-content {
+            padding: var(--spacing-2xl);
+        }
+
+        .ambient-content h2 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .ambient-content p {
+            font-size: 1.125rem;
+            line-height: 1.75;
+            color: var(--neutral-dark);
+            opacity: 0.9;
+            margin-bottom: var(--spacing-xl);
+        }
+
+        /* Header Styles */
+        .header {
+            position: fixed;
+            top: 36px;
+            left: 0;
+            right: 0;
+            background: linear-gradient(90deg, 
+                var(--primary-color) 0%,
+                var(--secondary-gradient-start) 100%);
+            z-index: 1000;
+            padding: var(--spacing-md) 0;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-xl);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 50px;
+            width: auto;
+            transition: transform 0.3s ease;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+        }
+
+        .logo:hover img {
+            transform: scale(1.05);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            margin-left: auto;
+        }
+
+        .nav-link {
+            color: var(--neutral-100);
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            transition: opacity 0.3s ease;
+            opacity: 0.9;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .nav-link:hover {
+            opacity: 1;
+        }
+
+        .nav-link.has-dropdown {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .nav-link.has-dropdown::after {
+            content: '▾';
+            font-size: 12px;
+            margin-top: 2px;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--neutral-100);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: var(--spacing-sm);
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--primary-color);
+                padding: var(--spacing-lg);
+                flex-direction: column;
+                gap: var(--spacing-md);
+                text-align: center;
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .logo img {
+                height: 32px;
+            }
+        }
+
+        /* Footer Styles */
+        .footer {
+            background: var(--primary-color);
+            color: var(--neutral-beige);
+            padding: var(--spacing-4xl) 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--spacing-3xl);
+        }
+
+        .footer-section h4 {
+            color: var(--accent-color);
+            margin-bottom: var(--spacing-xl);
+            font-size: 1.25rem;
+        }
+
+        .footer-section p {
+            margin-bottom: var(--spacing-md);
+            opacity: 0.9;
+            font-size: 1rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section li {
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .footer-section a {
+            color: var(--neutral-beige);
+            text-decoration: none;
+            opacity: 0.9;
+            transition: opacity 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            opacity: 1;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: var(--spacing-3xl);
+            margin-top: var(--spacing-3xl);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.8;
+            font-size: 0.875rem;
+        }
+
+        @media (max-width: 992px) {
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Booking Banner */
+        .booking-banner {
+            background: var(--secondary-gradient-start);
+            color: white;
+            text-align: center;
+            padding: 8px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1001;
+        }
+
+        .booking-banner a {
+            color: white;
+            text-decoration: underline;
+            margin-left: 5px;
+        }
+
+        /* Reviews Section */
+        .reviews-section {
+            background: var(--neutral-200);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--spacing-xl);
+            margin-top: var(--spacing-2xl);
+        }
+
+        .review-card {
+            background: linear-gradient(135deg,
+                rgba(255, 255, 255, 1) 0%,
+                rgba(255, 255, 255, 0.95) 100%);
+            border: 1px solid rgba(46, 31, 71, 0.1);
+            padding: var(--spacing-xl);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            transition: transform 0.3s ease;
+        }
+
+        .review-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .review-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .review-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            margin-right: var(--spacing-md);
+            background: var(--neutral-300);
+            overflow: hidden;
+        }
+
+        .review-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .review-author {
+            flex: 1;
+        }
+
+        .review-name {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 2px;
+        }
+
+        .review-date {
+            font-size: 0.875rem;
+            color: var(--neutral-dark);
+            opacity: 0.7;
+        }
+
+        .review-stars {
+            display: flex;
+            gap: 2px;
+            color: #FFD700;
+            text-shadow: 0 0 2px rgba(255, 215, 0, 0.3);
+        }
+
+        .review-text {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: var(--neutral-dark);
+            opacity: 0.9;
+        }
+
+        /* Smooth Scroll Behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, rgba(46, 59, 91, 0.05) 0%, rgba(86, 105, 145, 0.1) 100%);
+            padding: var(--spacing-4xl) 0;
+            position: relative;
+            overflow: hidden;
+            border-top: 1px solid rgba(46, 59, 91, 0.1);
+            border-bottom: 1px solid rgba(46, 59, 91, 0.1);
+            text-align: center;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at top right, 
+                rgba(86, 105, 145, 0.1) 0%, 
+                rgba(46, 59, 91, 0) 70%);
+            z-index: 0;
+        }
+
+        .cta-section .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-section .section-title {
+            color: #2E3B5B;
+            margin-bottom: var(--spacing-md);
+            font-weight: 600;
+        }
+
+        .cta-section .section-subtitle {
+            margin-bottom: var(--spacing-xl);
+            color: rgba(46, 59, 91, 0.8);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-section .cta-button {
+            margin: 0 auto;
+            display: inline-flex;
+        }
+
+        /* Relaxation Section Styles */
+        .relaxation-section {
+            padding: var(--spacing-4xl) var(--spacing-2xl);
+            background: var(--neutral-100);
+            position: relative;
+        }
+
+        .relaxation-section .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            gap: var(--spacing-3xl);
+            align-items: center;
+        }
+
+        .relaxation-image {
+            flex: 1;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .relaxation-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .relaxation-content {
+            flex: 1;
+        }
+
+        .relaxation-content h2 {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-xl);
+            line-height: 1.2;
+        }
+
+        .relaxation-content p {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: var(--neutral-700);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        @media (max-width: 768px) {
+            .relaxation-section .container {
+                flex-direction: column;
+            }
+            
+            .relaxation-content h2 {
+                font-size: 2.5rem;
+            }
+        }
+
+        /* Active link styles */
+        .nav-link.active {
+            opacity: 1;
+            position: relative;
+            font-weight: 600;
+        }
+        
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--neutral-100);
+        }
+    </style>
+</head>
+<body>
+    <!-- Booking Banner -->
+    <div class="booking-banner">
+        CLICK HERE TO BOOK YOUR VISIT <a href="#book">Schedule Now</a>
+    </div>
+    
+    <header class="header">
+        <div class="header-container">
+            <a href="/" class="logo">
+                <img src="https://plunsana.com/wp-content/uploads/2025/02/P-white-icon.png" alt="Plunsana Logo">
+            </a>
+            <nav class="nav-menu">
+                <a href="/" class="nav-link">Home</a>
+                <a href="#" class="nav-link has-dropdown active">Services</a>
+                <a href="/memberships" class="nav-link">Memberships</a>
+                <a href="/events" class="nav-link">Events</a>
+            </nav>
+            <button class="mobile-menu-btn">☰</button>
+        </div>
+    </header>
+
+    <!-- Add necessary JavaScript for mobile menu -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            mobileMenuBtn.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+                mobileMenuBtn.textContent = navMenu.classList.contains('active') ? '✕' : '☰';
+            });
+
+            // Close menu when clicking a link
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.classList.remove('active');
+                    mobileMenuBtn.textContent = '☰';
+                });
+            });
+        });
+    </script>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content fade-in">
+                <h1>
+                    EXPERIENCE THE<br>
+                    <span class="highlight">RED LIGHT THERAPY</span>
+                </h1>
+                <p>Rejuvenate your body at a cellular level with our advanced Red Light Therapy. Enhance skin health, accelerate muscle recovery, and boost your overall wellbeing at Plunsana.</p>
+                <a href="#book" class="cta-button">
+                    <span>SCHEDULE YOUR VISIT</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detox Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Skin Health</h2>
+            <div class="section-content">
+                <p class="section-subtitle">Red Light Therapy, a cornerstone of modern dermatological care, offers profound benefits for skin health, transcending traditional skincare methods by working at a cellular level. At Plunsana, this innovative therapy employs specific, clinically proven wavelengths of light to penetrate the skin, directly stimulating the mitochondria within cells. This process, known as photobiomodulation, boosts the production of collagen and elastin, the proteins responsible for the skin's structural integrity and elasticity. The result is a visible reduction in fine lines and wrinkles, a smoother complexion, and an overall more radiant skin tone.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Journey Section -->
+    <section class="journey-section">
+        <div class="journey-container">
+            <h2 class="journey-title">A 4-Step Journey to Inner Peace and Vitality</h2>
+            <div class="journey-grid">
+                <div class="journey-card fade-in">
+                    <div class="journey-number">1</div>
+                    <h3>Personalization</h3>
+                    <p>Personalization is crucial when considering Red Light Therapy. Begin by identifying your specific health or skincare goals, such as improving skin texture, reducing inflammation, accelerating muscle recovery, or enhancing overall well-being.</p>
+                </div>
+                <div class="journey-card fade-in">
+                    <div class="journey-number">2</div>
+                    <h3>Prepare Your Skin</h3>
+                    <p>Preparation of the area to be treated is a simple yet essential step. Ensure the skin is clean, dry, and free of any products that might block the light. This preparation ensures that the maximum amount of red and near-infrared light reaches the target areas.</p>
+                </div>
+                <div class="journey-card fade-in">
+                    <div class="journey-number">3</div>
+                    <h3>Engage in Consistent Sessions</h3>
+                    <p>Consistency in Red Light Therapy is key to achieving and maintaining results. Depending on your goals, a typical regimen might involve sessions ranging from 2 to 5 times a week. Each session should last between 10 to 20 minutes.</p>
+                </div>
+                <div class="journey-card fade-in">
+                    <div class="journey-number">4</div>
+                    <h3>Monitor and Adjust</h3>
+                    <p>Adaptation over time is important as your body responds to Red Light Therapy. Monitor the effects of the treatment on your health or skin condition and adjust the frequency, duration, or intensity of sessions as needed.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Muscle Recovery Section -->
+    <section class="relaxation-section">
+        <div class="container">
+            <div class="relaxation-image">
+                <img src="https://res.cloudinary.com/dcfv2aml6/image/upload/v1743940972/Red-light-muscle-recoverey_yqkcag.jpg" alt="Red Light Therapy for muscle recovery">
+            </div>
+            <div class="relaxation-content">
+                <h2>Muscle Recovery</h2>
+                <p>Red Light Therapy emerges as a game-changer in the realm of sports medicine and fitness, providing a cutting-edge solution for muscle recovery. At Plunsana, this therapy is specifically calibrated to address the needs of athletes and active individuals, offering a non-invasive route to enhancing physical health and performance. The therapy's deep tissue penetration stimulates cellular repair and increases circulation, providing sore and damaged muscle fibers with the necessary components for swift recovery.</p>
+                <p>This acceleration of the muscle repair process is crucial for athletes looking to minimize downtime between training sessions and improve their performance. The therapy's effectiveness in reducing inflammation and muscle fatigue also means a reduction in the risk of injury, supporting long-term physical health and athletic longevity. Additionally, Red Light Therapy's ability to reduce lactic acid buildup further eases post-exercise discomfort, making the recovery phase more comfortable and efficient.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section section">
+        <div class="container">
+            <h2 class="section-title" style="color: var(--neutral-beige);">Transformative Benefits of Red Light Therapy for Mind, Body, and Spirit</h2>
+            <p class="section-subtitle" style="color: var(--neutral-beige); opacity: 0.9;">Unlocking Wellness Through the Power of Light</p>
+            <div class="benefits-grid">
+                <div class="benefit-item fade-in">
+                    <h3>Enhanced Mental Clarity</h3>
+                    <p>Improves focus and cognitive function through cellular regeneration.</p>
+                </div>
+                <div class="benefit-item fade-in">
+                    <h3>Deep Cellular Rejuvenation</h3>
+                    <p>Stimulates mitochondria to produce more energy at the cellular level.</p>
+                </div>
+                <div class="benefit-item fade-in">
+                    <h3>Reduced Inflammation</h3>
+                    <p>Decreases inflammatory responses throughout the body.</p>
+                </div>
+                <div class="benefit-item fade-in">
+                    <h3>Improved Skin Health</h3>
+                    <p>Boosts collagen production for smoother, more youthful skin.</p>
+                </div>
+                <div class="benefit-item fade-in">
+                    <h3>Accelerated Healing</h3>
+                    <p>Speeds up the body's natural recovery processes for injuries and wounds.</p>
+                </div>
+                <div class="benefit-item fade-in">
+                    <h3>Pain Relief</h3>
+                    <p>Naturally reduces chronic pain without medication or side effects.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews-section section">
+        <div class="container">
+            <h2 class="section-title">What Our Clients Say</h2>
+            <p class="section-subtitle">Real experiences from our valued community</p>
+            <div class="reviews-grid">
+                <div class="review-card fade-in">
+                    <div class="review-header">
+                        <div class="review-avatar">
+                            <img src="https://res.cloudinary.com/dcfv2aml6/image/upload/v1743940972/woman-relaxing-sauna-1-980x654_totgso.jpg" alt="Sauna relaxation at Plunsana">
+                        </div>
+                        <div class="review-author">
+                            <div class="review-name">Sarah M.</div>
+                            <div class="review-date">2 weeks ago</div>
+                        </div>
+                    </div>
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"The red light therapy at Plunsana is truly transformative. The attention to detail and the professional environment make it the perfect addition to my wellness routine."</p>
+                </div>
+                <div class="review-card fade-in">
+                    <div class="review-header">
+                        <div class="review-avatar">
+                            <img src="https://ui-avatars.com/api/?name=Michael+R&background=2E1F47&color=fff" alt="Michael R.">
+                        </div>
+                        <div class="review-author">
+                            <div class="review-name">Michael R.</div>
+                            <div class="review-date">1 month ago</div>
+                        </div>
+                    </div>
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Regular red light therapy sessions have significantly improved my recovery time after workouts. The staff is knowledgeable and always ensures a comfortable experience."</p>
+                </div>
+                <div class="review-card fade-in">
+                    <div class="review-header">
+                        <div class="review-avatar">
+                            <img src="https://ui-avatars.com/api/?name=Emma+L&background=50284D&color=fff" alt="Emma L.">
+                        </div>
+                        <div class="review-author">
+                            <div class="review-name">Emma L.</div>
+                            <div class="review-date">3 weeks ago</div>
+                        </div>
+                    </div>
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"I've noticed a remarkable improvement in my skin's appearance since starting regular red light therapy sessions at Plunsana. The treatment is relaxing and effective."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Section -->
+    <section class="quote-section section">
+        <div class="container">
+            <blockquote class="fade-in">
+                "The potential health benefits of red light therapy rely on a simple fact: green plants and animals' cells need to be exposed to electromagnetic waves."
+                <footer>– Dr. Michael Hamblin, Harvard Medical School</footer>
+            </blockquote>
+            <div class="cta-content fade-in">
+                <h2 class="cta-title">Ready to Experience the Benefits?</h2>
+                <p class="cta-subtitle">Book your Red Light Therapy session today and start your wellness journey</p>
+                <a href="#book" class="cta-button">
+                    <span>SCHEDULE YOUR VISIT</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>Info</h4>
+                    <p><strong>Email:</strong> info@plunsana.com</p>
+                    <p><strong>Phone:</strong> 727.405.8853</p>
+                    <p><strong>Location:</strong> 2300 26th St N. St. Petersburg FL.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Hours</h4>
+                    <p><strong>Monday – Friday</strong><br>
+                    7 AM – 1 PM | 5 PM – 8 PM</p>
+                    <p><strong>Saturday & Sunday</strong><br>
+                    8 AM – 1 PM</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="/guided-classes">Guided Classes</a></li>
+                        <li><a href="/private-sessions">Private Sessions</a></li>
+                        <li><a href="/sauna">Sauna</a></li>
+                        <li><a href="/cold-plunge">Cold Plunge</a></li>
+                        <li><a href="/breathwork">Breathwork</a></li>
+                        <li><a href="/red-light-therapy" class="active">Red Light Therapy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow</h4>
+                    <ul>
+                        <li><a href="#" target="_blank">Instagram</a></li>
+                        <li><a href="#" target="_blank">Facebook</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                © 2024 Plunsana – Sauna • Cold Plunge • Breathwork • Red Light Therapy | All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 

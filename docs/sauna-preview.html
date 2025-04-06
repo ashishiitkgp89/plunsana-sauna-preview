@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sauna Experience - Plunsana</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Primary Colors */
+            --primary-color: #2E1F47;
+            --secondary-gradient-start: #8B314C;
+            --secondary-gradient-end: #50284D;
+            --accent-color: #C2D3FF;
+            --neutral-beige: #F5EDE1;
+            --neutral-dark: #333333;
+
+            /* Secondary Colors */
+            --neutral-100: #FFFFFF;
+            --neutral-200: #F8F9FA;
+            --neutral-300: #E9ECEF;
+            --neutral-400: #DEE2E6;
+            
+            /* Shadows */
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.08);
+            --shadow-md: 0 4px 8px rgba(0,0,0,0.12);
+            --shadow-lg: 0 8px 16px rgba(0,0,0,0.16);
+            --shadow-xl: 0 12px 24px rgba(0,0,0,0.2);
+            --shadow-inner: inset 0 2px 4px rgba(0,0,0,0.06);
+            
+            /* Spacing */
+            --spacing-xs: 0.25rem;   /* 4px */
+            --spacing-sm: 0.5rem;    /* 8px */
+            --spacing-md: 1rem;      /* 16px */
+            --spacing-lg: 1.5rem;    /* 24px */
+            --spacing-xl: 2rem;      /* 32px */
+            --spacing-2xl: 3rem;     /* 48px */
+            --spacing-3xl: 4rem;     /* 64px */
+            --spacing-4xl: 6rem;     /* 96px */
+            --spacing-5xl: 8rem;     /* 128px */
+            
+            /* Border Radius */
+            --radius-sm: 0.375rem;   /* 6px */
+            --radius-md: 0.5rem;     /* 8px */
+            --radius-lg: 1rem;       /* 16px */
+            --radius-xl: 1.5rem;     /* 24px */
+
+            /* New colors */
+            --accent-glow: rgba(194, 211, 255, 0.15);
+            --overlay-dark: rgba(46, 31, 71, 0.7);
+            --overlay-light: rgba(255, 255, 255, 0.05);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            font-size: 1.125rem;
+            line-height: 1.75;
+            color: var(--neutral-dark);
+            background-color: var(--neutral-100);
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-4xl);
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            padding: var(--spacing-5xl) 0;
+            background: linear-gradient(135deg, 
+                #50284D 0%,
+                #2E1F47 100%);
+            color: var(--neutral-beige);
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 70% 30%,
+                rgba(139, 49, 76, 0.4) 0%,
+                rgba(46, 31, 71, 0.8) 70%);
+            z-index: 1;
+        }
+
+        .hero-section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center,
+                rgba(46, 31, 71, 0) 0%,
+                rgba(46, 31, 71, 0.7) 100%);
+            z-index: 2;
+        }
+
+        .hero-grid {
+            position: relative;
+            z-index: 3;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-4xl);
+            align-items: center;
+            min-height: 80vh;
+            padding: var(--spacing-xl) 0;
+        }
+
+        .hero-content {
+            padding-right: var(--spacing-4xl);
+            position: relative;
+            z-index: 3;
+        }
+
+        .hero-content h1 {
+            font-size: 2.75rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: var(--spacing-xl);
+            text-transform: uppercase;
+            color: #F5EDE1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            letter-spacing: -0.02em;
+        }
+
+        .hero-content .highlight {
+            position: relative;
+            display: inline-block;
+            color: var(--neutral-beige);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-content .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, 
+                rgba(194, 211, 255, 0) 0%,
+                rgba(194, 211, 255, 0.7) 50%,
+                rgba(194, 211, 255, 0) 100%);
+        }
+
+        .hero-content p {
+            font-size: 1.125rem;
+            line-height: 1.6;
+            margin-bottom: var(--spacing-2xl);
+            opacity: 0.95;
+            color: #F5EDE1;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+            max-width: 540px;
+        }
+
+        .hero-image {
+            position: relative;
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-xl);
+            transform: perspective(1000px) rotateY(-5deg);
+            transition: transform 0.6s ease;
+            aspect-ratio: 4/3;
+        }
+
+        .hero-image:hover {
+            transform: perspective(1000px) rotateY(0deg);
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: var(--spacing-5xl) 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg,
+                rgba(46, 31, 71, 0) 0%,
+                rgba(46, 31, 71, 0.1) 50%,
+                rgba(46, 31, 71, 0) 100%);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: var(--spacing-2xl);
+            color: var(--primary-color);
+        }
+
+        .section-subtitle {
+            font-size: 1.25rem;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto var(--spacing-2xl);
+            color: var(--neutral-dark);
+            opacity: 0.85;
+            line-height: 1.6;
+        }
+
+        /* Journey Cards */
+        .journey-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--spacing-2xl);
+            margin-top: var(--spacing-3xl);
+        }
+
+        .journey-card {
+            background: var(--neutral-100);
+            padding: var(--spacing-2xl);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(46, 31, 71, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .journey-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom,
+                var(--secondary-gradient-start),
+                var(--secondary-gradient-end));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .journey-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: linear-gradient(135deg,
+                rgba(255, 255, 255, 0.1) 0%,
+                rgba(255, 255, 255, 0) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .journey-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .journey-card:hover::before {
+            opacity: 1;
+        }
+
+        .journey-card:hover::after {
+            opacity: 1;
+        }
+
+        .journey-card h3 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .journey-card p {
+            color: var(--neutral-dark);
+            opacity: 0.85;
+            font-size: 1rem;
+            line-height: 1.75;
+        }
+
+        /* Benefits Section */
+        .benefits-section {
+            background: var(--primary-color);
+            color: var(--neutral-beige);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .benefits-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at top right,
+                rgba(194, 211, 255, 0.15) 0%,
+                rgba(194, 211, 255, 0) 70%);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--spacing-2xl);
+            position: relative;
+            z-index: 1;
+        }
+
+        .benefit-item {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            padding: var(--spacing-2xl);
+            border-radius: var(--radius-lg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .benefit-item::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at center,
+                rgba(194, 211, 255, 0.1) 0%,
+                rgba(194, 211, 255, 0) 50%);
+            transform: rotate(45deg);
+            transition: transform 0.6s ease;
+        }
+
+        .benefit-item:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .benefit-item:hover::before {
+            transform: rotate(225deg);
+        }
+
+        .benefit-item h3 {
+            color: var(--accent-color);
+            font-size: 1.25rem;
+            margin-bottom: var(--spacing-md);
+            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+        }
+
+        .benefit-item p {
+            color: var(--neutral-beige);
+            opacity: 0.9;
+            font-size: 1rem;
+            line-height: 1.75;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+
+        /* Buttons */
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--spacing-md) var(--spacing-2xl);
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 1.125rem;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #2E1F47;
+            background: linear-gradient(135deg,
+                #F5EDE1 0%,
+                #FFFFFF 50%,
+                #F5EDE1 100%);
+            background-size: 200% 100%;
+            border-radius: var(--radius-md);
+            transition: all 0.3s ease, background-position 0.6s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .cta-button:hover {
+            background-position: right center;
+            letter-spacing: 1.5px;
+        }
+
+        .cta-button span {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Quote Section */
+        .quote-section {
+            background: var(--neutral-beige);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .quote-section::before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Poppins', sans-serif;
+            font-size: 12rem;
+            color: rgba(46, 31, 71, 0.1);
+        }
+
+        blockquote {
+            position: relative;
+            z-index: 1;
+            font-family: 'Poppins', sans-serif;
+            font-size: 2rem;
+            font-weight: 500;
+            font-style: italic;
+            color: var(--primary-color);
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            padding: var(--spacing-3xl) var(--spacing-2xl);
+            line-height: 1.4;
+        }
+
+        blockquote footer {
+            font-size: 1.125rem;
+            margin-top: var(--spacing-xl);
+            opacity: 0.8;
+            font-style: normal;
+            font-weight: 600;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1400px) {
+            .container {
+                max-width: 1140px;
+            }
+            
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+            
+            .hero-content .highlight {
+                font-size: 4rem;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .container {
+                max-width: 960px;
+                padding: 0 var(--spacing-3xl);
+            }
+            
+            .hero-content h1 {
+                font-size: 2.75rem;
+            }
+            
+            .hero-content .highlight {
+                font-size: 3.5rem;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+
+            blockquote {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .container {
+                max-width: 720px;
+            }
+
+            .benefits-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-content .highlight {
+                font-size: 3.25rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 var(--spacing-2xl);
+            }
+
+            .hero-grid {
+                grid-template-columns: 1fr;
+                min-height: auto;
+                gap: var(--spacing-3xl);
+            }
+
+            .hero-content {
+                padding: var(--spacing-2xl) 0;
+            }
+
+            .hero-image {
+                transform: perspective(1000px) rotateY(0);
+                margin: 0 -var(--spacing-xl);
+            }
+
+            .journey-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+
+            blockquote {
+                font-size: 1.75rem;
+                padding: var(--spacing-2xl) var(--spacing-xl);
+            }
+
+            .hero-content h1 {
+                font-size: 2.25rem;
+            }
+            
+            .hero-content .highlight {
+                font-size: 3rem;
+            }
+
+            .hero-content p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .journey-card, .benefit-item, .review-card {
+                transform: none !important;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .container {
+                padding: 0 var(--spacing-xl);
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .section-subtitle {
+                font-size: 1.125rem;
+            }
+
+            .hero-content .highlight {
+                font-size: 2.5rem;
+            }
+
+            blockquote {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .fade-in-scale {
+            opacity: 0;
+            animation: fadeInScale 0.6s ease forwards;
+        }
+
+        /* Add animation delays for cascade effect */
+        .journey-grid > *:nth-child(1) { animation-delay: 0.1s; }
+        .journey-grid > *:nth-child(2) { animation-delay: 0.2s; }
+        .journey-grid > *:nth-child(3) { animation-delay: 0.3s; }
+        .journey-grid > *:nth-child(4) { animation-delay: 0.4s; }
+
+        .benefits-grid > *:nth-child(1) { animation-delay: 0.1s; }
+        .benefits-grid > *:nth-child(2) { animation-delay: 0.2s; }
+        .benefits-grid > *:nth-child(3) { animation-delay: 0.3s; }
+        .benefits-grid > *:nth-child(4) { animation-delay: 0.4s; }
+        .benefits-grid > *:nth-child(5) { animation-delay: 0.5s; }
+        .benefits-grid > *:nth-child(6) { animation-delay: 0.6s; }
+
+        /* Utility Classes */
+        .text-gradient {
+            background: linear-gradient(135deg, 
+                var(--secondary-gradient-start),
+                var(--secondary-gradient-end));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+        }
+
+        /* Add new ambient section */
+        .ambient-section {
+            position: relative;
+            padding: var(--spacing-4xl) 0;
+            background: var(--neutral-200);
+            overflow: hidden;
+        }
+
+        .ambient-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--spacing-3xl);
+            align-items: center;
+        }
+
+        .ambient-image {
+            position: relative;
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-xl);
+            aspect-ratio: 4/3;
+        }
+
+        .ambient-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .ambient-content {
+            padding: var(--spacing-2xl);
+        }
+
+        .ambient-content h2 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .ambient-content p {
+            font-size: 1.125rem;
+            line-height: 1.75;
+            color: var(--neutral-dark);
+            opacity: 0.9;
+            margin-bottom: var(--spacing-xl);
+        }
+
+        /* Header Styles */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, rgba(46, 31, 71, 0.98) 0%, rgba(80, 40, 77, 0.98) 100%);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            z-index: 1000;
+            padding: var(--spacing-md) 0;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--spacing-sm) var(--spacing-4xl);
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            width: 40px;
+            height: auto;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: var(--spacing-xl);
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-link {
+            color: var(--neutral-beige);
+            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: opacity 0.3s ease;
+            opacity: 0.9;
+        }
+
+        .nav-link:hover {
+            opacity: 1;
+            color: var(--neutral-beige);
+        }
+
+        .nav-menu > li {
+            position: relative;
+        }
+
+        .nav-menu > li > a {
+            padding: var(--spacing-xs) 0;
+        }
+
+        /* Footer Styles */
+        .footer {
+            background: var(--primary-color);
+            color: var(--neutral-beige);
+            padding: var(--spacing-4xl) 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--spacing-3xl);
+        }
+
+        .footer-section h4 {
+            color: var(--accent-color);
+            margin-bottom: var(--spacing-xl);
+            font-size: 1.25rem;
+        }
+
+        .footer-section p {
+            margin-bottom: var(--spacing-md);
+            opacity: 0.9;
+            font-size: 1rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section li {
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .footer-section a {
+            color: var(--neutral-beige);
+            text-decoration: none;
+            opacity: 0.9;
+            transition: opacity 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            opacity: 1;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: var(--spacing-3xl);
+            margin-top: var(--spacing-3xl);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.8;
+            font-size: 0.875rem;
+        }
+
+        @media (max-width: 992px) {
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Booking Banner */
+        .booking-banner {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, var(--secondary-gradient-start), var(--secondary-gradient-end));
+            color: var(--neutral-beige);
+            text-align: center;
+            padding: var(--spacing-xs);
+            z-index: 1001;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .booking-banner a {
+            color: var(--neutral-beige);
+            text-decoration: underline;
+            margin-left: var(--spacing-sm);
+        }
+
+        .booking-banner + .header {
+            top: 28px;
+        }
+
+        /* Reviews Section */
+        .reviews-section {
+            background: var(--neutral-200);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--spacing-xl);
+            margin-top: var(--spacing-2xl);
+        }
+
+        .review-card {
+            background: linear-gradient(135deg,
+                rgba(255, 255, 255, 1) 0%,
+                rgba(255, 255, 255, 0.95) 100%);
+            border: 1px solid rgba(46, 31, 71, 0.1);
+            padding: var(--spacing-xl);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            transition: transform 0.3s ease;
+        }
+
+        .review-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .review-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .review-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            margin-right: var(--spacing-md);
+            background: var(--neutral-300);
+            overflow: hidden;
+        }
+
+        .review-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .review-author {
+            flex: 1;
+        }
+
+        .review-name {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 2px;
+        }
+
+        .review-date {
+            font-size: 0.875rem;
+            color: var(--neutral-dark);
+            opacity: 0.7;
+        }
+
+        .review-stars {
+            display: flex;
+            gap: 2px;
+            color: #FFD700;
+            text-shadow: 0 0 2px rgba(255, 215, 0, 0.3);
+        }
+
+        .review-text {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: var(--neutral-dark);
+            opacity: 0.9;
+        }
+
+        /* Smooth Scroll Behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <!-- Booking Banner -->
+    <div class="booking-banner">
+        CLICK HERE TO BOOK YOUR VISIT <a href="#book">Schedule Now</a>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <a href="/" class="logo">
+                <img src="https://plunsana.com/wp-content/uploads/2024/04/plunsana-logo-light.svg" alt="Plunsana" width="40" height="40">
+            </a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="/" class="nav-link">Home</a></li>
+                    <li><a href="/services" class="nav-link">Services</a></li>
+                    <li><a href="/memberships" class="nav-link">Memberships</a></li>
+                    <li><a href="/events" class="nav-link">Events</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content fade-in">
+                    <h1>
+                        GET THE<br>
+                        <span class="highlight">RELAXATION</span><br>
+                        YOU DESERVE IN<br>
+                        OUR SAUNA
+                    </h1>
+                    <p>At Plunsana, our sauna experiences are meticulously crafted to transport you to a state of unparalleled relaxation. The gentle, enveloping heat works to soothe muscle tension and alleviate stress, creating an oasis of calm.</p>
+                    <a href="#book" class="cta-button">
+                        <span>SCHEDULE YOUR SESSION</span>
+                    </a>
+                </div>
+                <div class="hero-image fade-in">
+                    <img src="https://plunsana.com/wp-content/uploads/2024/04/woman-relaxing-spa-2.jpg" alt="Woman Relaxing in Spa">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detox Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Detoxification</h2>
+            <div class="section-content">
+                <p class="section-subtitle">The sauna experience at Plunsana transcends traditional relaxation techniques by offering a profound detoxification process that engages the entire body. Through the mechanism of induced sweating, saunas serve as an effective means to expel toxins and impurities accumulated in the body. This natural purification process is facilitated by the elevated temperatures within the sauna, which stimulate the sweat glands and increase blood flow. As the body sweats, it not only sheds water but also releases a significant amount of these stored toxins, including heavy metals and chemicals absorbed from the environment.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Journey Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">A 4-Step Journey to Inner Peace and Vitality</h2>
+            <div class="journey-grid">
+                <div class="journey-card fade-in">
+                    <h3>1. Define Your Wellness Objectives</h3>
+                    <p>Goals are the starting point for any sauna therapy regimen. Whether you're looking to detoxify, relieve stress, improve cardiovascular health, or aid muscle recovery, clearly defining your objectives will help tailor your sauna sessions for maximum benefit. Understanding your goals also allows for a more focused and intentional sauna experience.</p>
+                </div>
+                <div class="journey-card fade-in">
+                    <h3>2. Hydration</h3>
+                    <p>Hydration is essential before entering a sauna. Due to the high temperatures and the sweating process, it's crucial to drink water beforehand to ensure your body remains adequately hydrated throughout the session. Preparing your body by staying hydrated helps prevent dehydration and enhances the detoxification process, making your sauna experience both safe and more beneficial.</p>
+                </div>
+                <div class="journey-card fade-in">
+                    <h3>3. Gradually Increase Session Time</h3>
+                    <p>Graduality in increasing the length of sauna sessions is vital for beginners or those adjusting to higher temperatures. Start with shorter sessions of around 5-10 minutes and gradually increase the duration as your body becomes accustomed to the heat. This approach helps acclimate your body, reducing the risk of overheating and allowing you to gain the full therapeutic effects over time.</p>
+                </div>
+                <div class="journey-card fade-in">
+                    <h3>4. Listen to Your Body and Cool Down Properly</h3>
+                    <p>Recovery after sauna use is as important as the session itself. After exiting the sauna, it's important to allow your body to cool down gradually. Take a lukewarm shower, drink water to rehydrate, and rest for a few minutes to let your body temperature return to normal. Listening to your body's signals during and after sauna sessions is crucial to avoid overheating and to maximize the benefits of relaxation and detoxification.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section section">
+        <div class="container">
+            <h2 class="section-title" style="color: var(--neutral-beige);">Transformative Benefits of Sauna for Mind, Body, and Spirit</h2>
+            <p class="section-subtitle" style="color: var(--neutral-beige); opacity: 0.9;">Unlocking Wellness Through the Power of Breath</p>
+            <div class="benefits-grid">
+                <div class="benefit-item fade-in">
+                    <h3>Mental Clarity</h3>
+                    <p>Enhances mental clarity and focus through controlled breathing.</p>
+                </div>
+                <div class="benefit-item fade-in">
+                    <h3>Deep Relaxation</h3>
+                    <p>Promotes deep relaxation and reduces symptoms of stress.</p>
+                </div>
+                <div class="benefit-item fade-in">
+                    <h3>Emotional Release</h3>
+                    <p>Encourages emotional release and helps process pent-up feelings.</p>
+                </div>
+                <div class="benefit-item fade-in">
+                    <h3>Energy Boost</h3>
+                    <p>Increases energy levels and revitalizes the body.</p>
+                </div>
+                <div class="benefit-item fade-in">
+                    <h3>Detoxification</h3>
+                    <p>Supports detoxification processes through increased oxygenation.</p>
+                </div>
+                <div class="benefit-item fade-in">
+                    <h3>Anxiety Management</h3>
+                    <p>Helps in managing anxiety and depression by regulating the nervous system.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews-section section">
+        <div class="container">
+            <h2 class="section-title">What Our Clients Say</h2>
+            <p class="section-subtitle">Real experiences from our valued community</p>
+            <div class="reviews-grid">
+                <div class="review-card fade-in">
+                    <div class="review-header">
+                        <div class="review-avatar">
+                            <img src="https://plunsana.com/wp-content/uploads/2024/04/avatar-1.jpg" alt="Sarah M.">
+                        </div>
+                        <div class="review-author">
+                            <div class="review-name">Sarah M.</div>
+                            <div class="review-date">2 weeks ago</div>
+                        </div>
+                    </div>
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"The sauna experience at Plunsana is truly transformative. The attention to detail and the calming environment make it the perfect escape from daily stress."</p>
+                </div>
+                <div class="review-card fade-in">
+                    <div class="review-header">
+                        <div class="review-avatar">
+                            <img src="https://plunsana.com/wp-content/uploads/2024/04/avatar-2.jpg" alt="Michael R.">
+                        </div>
+                        <div class="review-author">
+                            <div class="review-name">Michael R.</div>
+                            <div class="review-date">1 month ago</div>
+                        </div>
+                    </div>
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Regular sauna sessions have significantly improved my recovery time after workouts. The staff is knowledgeable and always ensures a comfortable experience."</p>
+                </div>
+                <div class="review-card fade-in">
+                    <div class="review-header">
+                        <div class="review-avatar">
+                            <img src="https://plunsana.com/wp-content/uploads/2024/04/avatar-3.jpg" alt="Emma L.">
+                        </div>
+                        <div class="review-author">
+                            <div class="review-name">Emma L.</div>
+                            <div class="review-date">3 weeks ago</div>
+                        </div>
+                    </div>
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"I've noticed a remarkable improvement in my sleep quality since starting regular sauna sessions at Plunsana. The ambiance is perfect for relaxation."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Relaxation Section -->
+    <section class="section">
+        <div class="container">
+            <div class="ambient-grid">
+                <div class="ambient-content fade-in">
+                    <h2>Deep Relaxation & Restoration</h2>
+                    <p>The benefits of sauna sessions extend beyond the physical to encompass mental and emotional wellbeing. The secluded, quiet space of the sauna provides a rare opportunity to disconnect from the outside world and engage in mindful meditation or simply enjoy the tranquility.</p>
+                    <p>This mental break can significantly reduce stress levels, leading to improved mood and cognitive function. Regular sauna use has been associated with enhanced sleep quality, further contributing to the overall relaxation and rejuvenation of the mind and body.</p>
+                </div>
+                <div class="ambient-image fade-in">
+                    <img src="https://plunsana.com/wp-content/uploads/2024/04/woman-sauna-with-towels-her-hands-closeup.jpg" alt="Woman in Sauna with Towels">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Section -->
+    <section class="quote-section section">
+        <div class="container">
+            <blockquote class="fade-in">
+                "Cold is a stressor, so if you can get into the cold and control your body's response to it, you will be able to control stress."
+                <footer>– WIM HOF</footer>
+            </blockquote>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>Info</h4>
+                    <p><strong>Email:</strong> info@plunsana.com</p>
+                    <p><strong>Phone:</strong> 727.405.8853</p>
+                    <p><strong>Location:</strong> 2300 26th St N. St. Petersburg FL.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Hours</h4>
+                    <p><strong>Monday – Friday</strong><br>
+                    7 AM – 1 PM | 5 PM – 8 PM</p>
+                    <p><strong>Saturday & Sunday</strong><br>
+                    8 AM – 1 PM</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="/guided-classes">Guided Classes</a></li>
+                        <li><a href="/private-sessions">Private Sessions</a></li>
+                        <li><a href="/sauna">Sauna</a></li>
+                        <li><a href="/cold-plunge">Cold Plunge</a></li>
+                        <li><a href="/breathwork">Breathwork</a></li>
+                        <li><a href="/red-light-therapy">Red Light Therapy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow</h4>
+                    <ul>
+                        <li><a href="#" target="_blank">Instagram</a></li>
+                        <li><a href="#" target="_blank">Facebook</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                © 2024 Plunsana – Sauna • Cold Plunge • Breathwork | All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 
